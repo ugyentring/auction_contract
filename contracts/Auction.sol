@@ -95,7 +95,6 @@ contract Auction {
         returns (bool)
     {
         // to place a bid auction should be running
-
         require(auctionState == State.Running);
 
         // minimum value allowed to be sent
