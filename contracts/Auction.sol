@@ -3,11 +3,8 @@ pragma solidity ^0.8.0;
 
 contract Auction {
     address payable public owner;
-
     uint public startBlock;
-
     uint public endBlock;
-
     string public ipfsHash;
 
     enum State {
