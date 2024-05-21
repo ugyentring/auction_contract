@@ -1,4 +1,4 @@
-const { expect, assert } = require("chai");
+const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
 describe("Counter contract", function () {
@@ -37,5 +37,17 @@ describe("Counter contract", function () {
     await expect(counter.decrement()).to.be.revertedWith(
       "Counter: decrement overflow"
     );
+  });
+
+  //question-5
+  it("should return correct counter after multiple operations", async function () {
+    await counter.increment();
+    await counter.increment();
+    await counter.increment();
+    await counter.decrement();
+    await counter.decrement();
+
+    const count = await counter.getCount();
+    expect(count).to.equal(1);
   });
 });
