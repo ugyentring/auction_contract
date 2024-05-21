@@ -21,5 +21,11 @@ describe("Counter contract", function () {
     const count = await counter.getCount();
     expect(count).to.equal(1);
   });
-  
+
+  it("should increase and decrease val by 1", async function () {
+    await counter.increment();
+    await counter.decrement();
+    const count = await counter.getCount();
+    expect(count).to.equal(0);
+  });
 });
