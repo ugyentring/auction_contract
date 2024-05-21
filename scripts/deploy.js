@@ -2,7 +2,7 @@ const hre = require("hardhat");
 
 async function main() {
   // We get the contract to deploy
-  const Counter = await hre.ethers.getContractFactory("Auction");
+  const Counter = await hre.ethers.getContractFactory("Counter");
   const counter = await Counter.deploy();
 
   await counter.deployed();
