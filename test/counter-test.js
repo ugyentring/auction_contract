@@ -28,4 +28,12 @@ describe("Counter contract", function () {
     const count = await counter.getCount();
     expect(count).to.equal(0);
   });
+
+  it("should revert trasaction when counter is below 0", async function () {
+    await expect(counter.decrement()).to.be.revertedWith(
+      "Counter: decrement overflow"
+    );
+  });
+
+  
 });
